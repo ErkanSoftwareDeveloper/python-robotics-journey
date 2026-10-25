@@ -1,0 +1,47 @@
+
+<mujoco model="My First Robot">
+    <compiler angle="radian" autolimits="true"/>
+    <option timestep="0.01"/>
+
+    <worldbody>
+        <light pos="1 1 3"/>
+
+        <geom type="plane"
+              size="2 2 0.1"
+              rgba="0.2 0.2 0.25 1"/>
+
+        <geom name="base"
+              type="cylinder"
+              pos="0 0 0.12"
+              size="0.12 0.12"
+              rgba="0.4 0.4 0.4 1"/>
+
+        <body name="robot_arm" pos="0 0 0.25">
+
+            <joint name="shoulder"
+                   type="hinge"
+                   axis="0 0 1"
+                   range="-1.2 1.2"
+                   damping="1"/>
+
+            <geom type="capsule"
+                  fromto="0 0 0 0.55 0 0"
+                  size="0.045"
+                  mass="0.5"
+                  rgba="0 0.8 1 1"/>
+
+            <geom type="sphere"
+                  pos="0.55 0 0"
+                  size="0.06"
+                  mass="0.1"
+                  rgba="1 0.5 0.15 1"/>
+        </body>
+    </worldbody>
+
+    <actuator>
+        <position name="motor"
+                  joint="shoulder"
+                  kp="40"
+                  ctrlrange="-1 1"/>
+    </actuator>
+</mujoco>
