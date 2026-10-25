@@ -13,7 +13,7 @@ robots using Python.
 
 ## Progress
 - [x] Project setup
-- [ ] First Python robotics lesson
-- [ ] First robot simulation
+- [x] First Python robotics lesson
+- [x] First robot simulation
 
 ## Erkansoftwaredeveloper
